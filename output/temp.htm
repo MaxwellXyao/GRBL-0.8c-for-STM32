@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\output\temp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\output\temp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 4.1 [Build 481]: Last Updated: Thu Dec 31 00:51:36 2015
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 4.1 [Build 481]: Last Updated: Sat Jan 02 19:44:42 2016
 <BR><P>
 <H3>Maximum Stack Usage =        776 bytes + Unknown(Functions without stacksize, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -567,10 +567,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__RESETPRIMASK
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_put_char
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_get_char
-<LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_IRQHandler
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_put_char
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_get_char
 </UL>
 
 <P><STRONG><a name="[78]"></a>NVIC_SETFAULTMASK</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, stm32f10x_nvic.o(.text), UNUSED)
@@ -1012,9 +1012,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;st_wake_up
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_runtime
+<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_runtime
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_line
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
 </UL>
 
 <P><STRONG><a name="[be]"></a>st_feed_hold</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stepper.o(.text))
@@ -1039,12 +1039,12 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ITConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printString
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_uint32_base10
+<BR>[Called By]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_uint32_base10
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_uint8_base2
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printPgmString
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printInteger
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printFloat
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printString
 </UL>
 
 <P><STRONG><a name="[cb]"></a>serial_read</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, serial.o(.text))
@@ -1066,8 +1066,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> stm32f10x_vector.o(RESET)
 </UL>
 <P><STRONG><a name="[6c]"></a>limits_init</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, limits.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
 </UL>
 
 <P><STRONG><a name="[23]"></a>EXTI9_5_IRQHandler</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, limits.o(.text))
@@ -1106,8 +1106,8 @@ Global Symbols
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printString
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
 </UL>
 
 <P><STRONG><a name="[12]"></a>EXTI0_IRQHandler</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, protocol.o(.text))
@@ -1135,26 +1135,31 @@ Global Symbols
 <P><STRONG><a name="[71]"></a>protocol_execute_runtime</STRONG> (Thumb, 216 bytes, Stack size 8 bytes, protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = protocol_execute_runtime &rArr; st_cycle_reinitialize &rArr; plan_cycle_reinitialize &rArr; planner_recalculate &rArr; planner_recalculate_trapezoids &rArr; calculate_trapezoid_for_block &rArr; intersection_distance &rArr; __aeabi_fmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_alarm_message
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;st_cycle_reinitialize
+<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;st_cycle_reinitialize
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;st_feed_hold
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;st_cycle_start
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_feedback_message
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_alarm_message
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_synchronize
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_process
+<BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_process
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_dwell
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_line
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_synchronize
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
 </UL>
 
 <P><STRONG><a name="[bf]"></a>protocol_execute_line</STRONG> (Thumb, 522 bytes, Stack size 32 bytes, protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 760 + Unknown Stack Size
 <LI>Call Chain = protocol_execute_line &rArr; protocol_execute_startup &rArr; gc_execute_line &rArr; mc_arc &rArr; mc_line &rArr; plan_buffer_line &rArr; planner_recalculate &rArr; planner_recalculate_trapezoids &rArr; calculate_trapezoid_for_block &rArr; intersection_distance &rArr; __aeabi_fmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_startup_line
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_reset
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_feedback_message
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_startup
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_startup_line
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_read_startup_line
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_status_message
@@ -1166,11 +1171,6 @@ Global Symbols
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_float
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_reset
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_feedback_message
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_startup
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
 </UL>
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_process
 </UL>
@@ -1179,19 +1179,19 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 776 + Unknown Stack Size
 <LI>Call Chain = protocol_process &rArr; protocol_execute_line &rArr; protocol_execute_startup &rArr; gc_execute_line &rArr; mc_arc &rArr; mc_line &rArr; plan_buffer_line &rArr; planner_recalculate &rArr; planner_recalculate_trapezoids &rArr; calculate_trapezoid_for_block &rArr; intersection_distance &rArr; __aeabi_fmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_status_message
+<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;serial_read
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_runtime
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_status_message
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_reset_line_buffer
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;serial_read
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_runtime
 </UL>
 <BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[cc]"></a>spindle_stop</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, spindle_control.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spindle_run
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_reset
+<BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_reset
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spindle_init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spindle_run
 </UL>
 
 <P><STRONG><a name="[6a]"></a>spindle_init</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, spindle_control.o(.text))
@@ -1212,9 +1212,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[cf]"></a>coolant_stop</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, coolant_control.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;coolant_run
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_reset
+<BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_reset
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;coolant_init
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;coolant_run
 </UL>
 
 <P><STRONG><a name="[6b]"></a>coolant_init</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, coolant_control.o(.text))
@@ -1243,8 +1243,8 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;next_statement
+<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;next_statement
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
 </UL>
 
 <P><STRONG><a name="[9b]"></a>delay_ms</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, nuts_bolts.o(.text))
@@ -1252,13 +1252,13 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_delay_ms
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_alarm_message
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;limits_go_home
+<BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;limits_go_home
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;st_go_idle
 <LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI2_IRQHandler
 <LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI1_IRQHandler
 <LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_dwell
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_alarm_message
 </UL>
 
 <P><STRONG><a name="[8a]"></a>delay_us</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, nuts_bolts.o(.text))
@@ -1277,8 +1277,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_set_current_position
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_set_current_position
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
 </UL>
 
 <P><STRONG><a name="[d7]"></a>eeprom_get_char</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, eeprom.o(.text))
@@ -1289,8 +1289,8 @@ Global Symbols
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SETPRIMASK
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_RESETPRIMASK
 </UL>
-<BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcpy_from_eeprom_with_checksum
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_global_settings
+<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_global_settings
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcpy_from_eeprom_with_checksum
 </UL>
 
 <P><STRONG><a name="[d8]"></a>eeprom_put_char</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, eeprom.o(.text))
@@ -1301,8 +1301,8 @@ Global Symbols
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SETPRIMASK
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_RESETPRIMASK
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcpy_to_eeprom_with_checksum
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_global_settings
+<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_global_settings
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcpy_to_eeprom_with_checksum
 </UL>
 
 <P><STRONG><a name="[d9]"></a>memcpy_to_eeprom_with_checksum</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, eeprom.o(.text))
@@ -1311,9 +1311,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_put_char
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_startup_line
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_global_settings
+<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_global_settings
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_write_coord_data
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_startup_line
 </UL>
 
 <P><STRONG><a name="[da]"></a>memcpy_from_eeprom_with_checksum</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, eeprom.o(.text))
@@ -1322,9 +1322,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_get_char
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_read_startup_line
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_global_settings
+<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_global_settings
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_read_coord_data
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_read_startup_line
 </UL>
 
 <P><STRONG><a name="[b9]"></a>report_status_message</STRONG> (Thumb, 156 bytes, Stack size 8 bytes, report.o(.text))
@@ -1332,12 +1332,12 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printPgmString
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_parameters
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_init
+<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_init
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_process
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_startup
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_init
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_parameters
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
 </UL>
 
 <P><STRONG><a name="[bc]"></a>report_alarm_message</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, report.o(.text))
@@ -1354,9 +1354,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printPgmString
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_runtime
+<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_runtime
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
 </UL>
 
 <P><STRONG><a name="[b7]"></a>report_init_message</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, report.o(.text))
@@ -1384,21 +1384,21 @@ Global Symbols
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printInteger
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printFloat
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_init
+<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_init
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
 </UL>
 
 <P><STRONG><a name="[c2]"></a>report_gcode_parameters</STRONG> (Thumb, 336 bytes, Stack size 48 bytes, report.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240 + Unknown Stack Size
 <LI>Call Chain = report_gcode_parameters &rArr; settings_read_coord_data &rArr; settings_write_coord_data &rArr; memcpy_to_eeprom_with_checksum &rArr; eeprom_put_char &rArr; HW_EEPROM_putChar &rArr; STMFLASH_Write &rArr; STMFLASH_Write_NoCheck &rArr; STMFLASH_WriteHalfWord &rArr; STMFLASH_WaitDone &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_status_message
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
+<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_read_coord_data
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printPgmString
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printFloat
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_status_message
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
 </UL>
@@ -1419,9 +1419,9 @@ Global Symbols
 <P><STRONG><a name="[c5]"></a>report_startup_line</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, report.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = report_startup_line &rArr; printInteger &rArr; print_uint32_base10 &rArr; serial_write &rArr; USART_ITConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printString
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printPgmString
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printPgmString
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printInteger
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printString
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
 </UL>
@@ -1448,8 +1448,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;serial_write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_startup_line
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_startup
+<BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_startup
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_startup_line
 </UL>
 
 <P><STRONG><a name="[db]"></a>printPgmString</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, print.o(.text))
@@ -1457,7 +1457,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;serial_write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_status_message
+<BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_feedback_message
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_status_message
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_startup_line
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_init_message
@@ -1466,7 +1467,6 @@ Global Symbols
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_parameters
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_modes
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_alarm_message
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_feedback_message
 </UL>
 
 <P><STRONG><a name="[de]"></a>print_uint8_base2</STRONG> (Thumb, 52 bytes, Stack size 24 bytes, print.o(.text))
@@ -1521,8 +1521,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcpy_to_eeprom_with_checksum
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_read_coord_data
+<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_read_coord_data
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[e7]"></a>write_global_settings</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, settings.o(.text))
@@ -1532,8 +1532,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcpy_to_eeprom_with_checksum
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_put_char
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
-<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_reset
+<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_reset
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
 </UL>
 
 <P><STRONG><a name="[e8]"></a>settings_reset</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, settings.o(.text))
@@ -1553,30 +1553,30 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcpy_from_eeprom_with_checksum
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_startup_line
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_startup
+<BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_startup
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
 </UL>
 
 <P><STRONG><a name="[df]"></a>settings_read_coord_data</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, settings.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192 + Unknown Stack Size
 <LI>Call Chain = settings_read_coord_data &rArr; settings_write_coord_data &rArr; memcpy_to_eeprom_with_checksum &rArr; eeprom_put_char &rArr; HW_EEPROM_putChar &rArr; STMFLASH_Write &rArr; STMFLASH_Write_NoCheck &rArr; STMFLASH_WriteHalfWord &rArr; STMFLASH_WaitDone &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcpy_from_eeprom_with_checksum
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_write_coord_data
+<BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_write_coord_data
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcpy_from_eeprom_with_checksum
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_parameters
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_init
+<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_init
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_init
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_parameters
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[e9]"></a>read_global_settings</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, settings.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
 <LI>Call Chain = read_global_settings &rArr; settings_reset &rArr; write_global_settings &rArr; memcpy_to_eeprom_with_checksum &rArr; eeprom_put_char &rArr; HW_EEPROM_putChar &rArr; STMFLASH_Write &rArr; STMFLASH_Write_NoCheck &rArr; STMFLASH_WriteHalfWord &rArr; STMFLASH_WaitDone &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcpy_from_eeprom_with_checksum
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_reset
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcpy_from_eeprom_with_checksum
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_get_char
-<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_reset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_init
 </UL>
@@ -1604,11 +1604,11 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 216 + Unknown Stack Size
 <LI>Call Chain = settings_init &rArr; settings_read_coord_data &rArr; settings_write_coord_data &rArr; memcpy_to_eeprom_with_checksum &rArr; eeprom_put_char &rArr; HW_EEPROM_putChar &rArr; STMFLASH_Write &rArr; STMFLASH_Write_NoCheck &rArr; STMFLASH_WriteHalfWord &rArr; STMFLASH_WaitDone &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_status_message
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_grbl_settings
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_global_settings
+<BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_global_settings
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_reset
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_read_coord_data
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_status_message
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_grbl_settings
 </UL>
 <BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1621,9 +1621,9 @@ Global Symbols
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_check_full_buffer
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
+<BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
 </UL>
 
 <P><STRONG><a name="[ee]"></a>mc_arc</STRONG> (Thumb, 868 bytes, Stack size 176 bytes, motion_control.o(.text))
@@ -1657,8 +1657,7 @@ Global Symbols
 <P><STRONG><a name="[f8]"></a>mc_dwell</STRONG> (Thumb, 172 bytes, Stack size 48 bytes, motion_control.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = mc_dwell &rArr; plan_synchronize &rArr; protocol_execute_runtime &rArr; st_cycle_reinitialize &rArr; plan_cycle_reinitialize &rArr; planner_recalculate &rArr; planner_recalculate_trapezoids &rArr; calculate_trapezoid_for_block &rArr; intersection_distance &rArr; __aeabi_fmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_synchronize
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_delay_ms
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_runtime
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;floor
@@ -1667,6 +1666,7 @@ Global Symbols
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_synchronize
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
@@ -1674,14 +1674,14 @@ Global Symbols
 <P><STRONG><a name="[c4]"></a>mc_go_home</STRONG> (Thumb, 248 bytes, Stack size 40 bytes, motion_control.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 416<LI>Call Chain = mc_go_home &rArr; mc_line &rArr; plan_buffer_line &rArr; planner_recalculate &rArr; planner_recalculate_trapezoids &rArr; calculate_trapezoid_for_block &rArr; intersection_distance &rArr; __aeabi_fmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_synchronize
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;limits_go_home
+<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;limits_go_home
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;st_cycle_start
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_sync_current_position
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_runtime
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_line
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_synchronize
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
 </UL>
@@ -1689,25 +1689,25 @@ Global Symbols
 <P><STRONG><a name="[a7]"></a>mc_reset</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, motion_control.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = mc_reset &rArr; st_go_idle &rArr; delay_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;coolant_stop
+<BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;st_go_idle
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;coolant_stop
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spindle_stop
-<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;st_go_idle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
-<LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
 <LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI9_5_IRQHandler
 <LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
 </UL>
 
 <P><STRONG><a name="[68]"></a>gc_init</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, gcode.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
 <LI>Call Chain = gc_init &rArr; settings_read_coord_data &rArr; settings_write_coord_data &rArr; memcpy_to_eeprom_with_checksum &rArr; eeprom_put_char &rArr; HW_EEPROM_putChar &rArr; STMFLASH_Write &rArr; STMFLASH_Write_NoCheck &rArr; STMFLASH_WriteHalfWord &rArr; STMFLASH_WaitDone &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_status_message
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;select_plane
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_read_coord_data
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_status_message
 </UL>
 <BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1725,10 +1725,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 712 + Unknown Stack Size
 <LI>Call Chain = gc_execute_line &rArr; mc_arc &rArr; mc_line &rArr; plan_buffer_line &rArr; planner_recalculate &rArr; planner_recalculate_trapezoids &rArr; calculate_trapezoid_for_block &rArr; intersection_distance &rArr; __aeabi_fmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;coolant_run
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_synchronize
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spindle_run
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_reset
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_reset
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hypot
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
@@ -1751,9 +1748,12 @@ Global Symbols
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_line
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_write_coord_data
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_read_coord_data
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;coolant_run
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_synchronize
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spindle_run
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_startup
+<BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_startup
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
 </UL>
 
 <P><STRONG><a name="[10a]"></a>plan_reset_buffer</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, planner.o(.text))
@@ -1782,8 +1782,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[9e]"></a>plan_get_current_block</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, planner.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_synchronize
-<LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_IRQHandler
+<BR><BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_IRQHandler
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_synchronize
 </UL>
 
 <P><STRONG><a name="[ec]"></a>plan_check_full_buffer</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, planner.o(.text))
@@ -1796,11 +1796,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_get_current_block
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_runtime
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;coolant_run
+<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_dwell
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;coolant_run
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spindle_run
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_dwell
 </UL>
 
 <P><STRONG><a name="[ed]"></a>plan_buffer_line</STRONG> (Thumb, 1442 bytes, Stack size 152 bytes, planner.o(.text))
@@ -2088,8 +2088,8 @@ Global Symbols
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
+<BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[f7]"></a>sin</STRONG> (Thumb, 166 bytes, Stack size 32 bytes, sin.o(i.sin))
@@ -2111,29 +2111,29 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsqrt
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hypot
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;max_allowable_speed
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[b0]"></a>__aeabi_d2f</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, d2f.o(x$fpl$d2f))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_d2f
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_parameters
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_modes
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_float
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;planner_recalculate_trapezoids
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;max_allowable_speed
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;to_millimeters
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printFloat
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_parameters
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_modes
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_float
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[11d]"></a>_d2f</STRONG> (Thumb, 98 bytes, Stack size 32 bytes, d2f.o(x$fpl$d2f), UNUSED)
@@ -2144,8 +2144,7 @@ Global Symbols
 <P><STRONG><a name="[ab]"></a>__aeabi_dadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
@@ -2157,6 +2156,7 @@ Global Symbols
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printFloat
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
 </UL>
 
 <P><STRONG><a name="[120]"></a>_dadd</STRONG> (Thumb, 328 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
@@ -2179,14 +2179,14 @@ Global Symbols
 <P><STRONG><a name="[af]"></a>__aeabi_ddiv</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, ddiv.o(x$fpl$ddiv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_ddiv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;planner_recalculate_trapezoids
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[125]"></a>_ddiv</STRONG> (Thumb, 552 bytes, Stack size 32 bytes, ddiv.o(x$fpl$ddiv), UNUSED)
@@ -2221,12 +2221,12 @@ Global Symbols
 <P><STRONG><a name="[ac]"></a>__aeabi_d2uiz</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dfixu.o(x$fpl$dfixu))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_d2uiz
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_trapezoid_for_block
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_dwell
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
 </UL>
 
 <P><STRONG><a name="[129]"></a>_dfixu</STRONG> (Thumb, 90 bytes, Stack size 32 bytes, dfixu.o(x$fpl$dfixu), UNUSED)
@@ -2250,8 +2250,8 @@ Global Symbols
 <P><STRONG><a name="[ea]"></a>__aeabi_cdcmple</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dleqf.o(x$fpl$dleqf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_cdcmple
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
+<BR>[Called By]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
 </UL>
 
 <P><STRONG><a name="[12a]"></a>_dcmple</STRONG> (Thumb, 120 bytes, Stack size 32 bytes, dleqf.o(x$fpl$dleqf), UNUSED)
@@ -2266,12 +2266,7 @@ Global Symbols
 <P><STRONG><a name="[b4]"></a>__aeabi_dmul</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_dmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_parameters
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_modes
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_float
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
@@ -2282,6 +2277,11 @@ Global Symbols
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;to_millimeters
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_parameters
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_modes
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_float
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[12b]"></a>_dmul</STRONG> (Thumb, 332 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul), UNUSED)
@@ -2354,14 +2354,14 @@ Global Symbols
 <P><STRONG><a name="[e2]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_dsub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
+<BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hypot
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
 </UL>
 
 <P><STRONG><a name="[130]"></a>_dsub</STRONG> (Thumb, 464 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
@@ -2372,13 +2372,7 @@ Global Symbols
 <P><STRONG><a name="[aa]"></a>__aeabi_f2d</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, f2d.o(x$fpl$f2d))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_f2d
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_parameters
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_modes
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_float
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;planner_recalculate_trapezoids
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_trapezoid_for_block
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;max_allowable_speed
@@ -2387,6 +2381,12 @@ Global Symbols
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_dwell
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printFloat
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_parameters
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_gcode_modes
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_float
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[131]"></a>_f2d</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, f2d.o(x$fpl$f2d), UNUSED)
@@ -2397,11 +2397,11 @@ Global Symbols
 <P><STRONG><a name="[e1]"></a>__aeabi_fadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fadd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;intersection_distance
+<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;intersection_distance
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[133]"></a>_fadd</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fadd), UNUSED)
@@ -2418,16 +2418,16 @@ Global Symbols
 <P><STRONG><a name="[b2]"></a>__aeabi_fdiv</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fdiv.o(x$fpl$fdiv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fdiv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_set_current_position
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_grbl_settings
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_cycle_reinitialize
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;planner_recalculate_trapezoids
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;intersection_distance
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;estimate_acceleration_distance
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_set_current_position
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_grbl_settings
 </UL>
 
 <P><STRONG><a name="[135]"></a>_fdiv</STRONG> (Thumb, 384 bytes, Stack size 16 bytes, fdiv.o(x$fpl$fdiv), UNUSED)
@@ -2438,11 +2438,11 @@ Global Symbols
 <P><STRONG><a name="[d2]"></a>__aeabi_cfcmpeq</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_cfcmpeq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
+<BR>[Called By]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;planner_forward_pass_kernel
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;planner_reverse_pass_kernel
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_float
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;planner_forward_pass_kernel
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;planner_reverse_pass_kernel
 </UL>
 
 <P><STRONG><a name="[136]"></a>_fcmpeq</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf), UNUSED)
@@ -2453,9 +2453,9 @@ Global Symbols
 <P><STRONG><a name="[c9]"></a>__aeabi_f2iz</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, ffix.o(x$fpl$ffix))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_f2iz
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
+<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printFloat
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;protocol_execute_line
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printFloat
 </UL>
 
 <P><STRONG><a name="[138]"></a>_ffix</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, ffix.o(x$fpl$ffix), UNUSED)
@@ -2475,21 +2475,21 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[e0]"></a>__aeabi_i2f</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$fflt))
-<BR><BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_set_current_position
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_cycle_reinitialize
+<BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_cycle_reinitialize
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_trapezoid_for_block
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_dwell
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_set_current_position
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;report_realtime_status
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
 </UL>
 
 <P><STRONG><a name="[1ca]"></a>_fflt</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$fflt), UNUSED)
 
 <P><STRONG><a name="[d1]"></a>__aeabi_ui2f</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$ffltu))
-<BR><BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_float
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_trapezoid_for_block
+<BR><BR>[Called By]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_trapezoid_for_block
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_float
 </UL>
 
 <P><STRONG><a name="[1cb]"></a>_ffltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$ffltu), UNUSED)
@@ -2497,12 +2497,12 @@ Global Symbols
 <P><STRONG><a name="[e5]"></a>__aeabi_cfcmple</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_cfcmple
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;planner_forward_pass_kernel
+<BR>[Called By]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;planner_forward_pass_kernel
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printFloat
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[13a]"></a>_fcmple</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf), UNUSED)
@@ -2517,10 +2517,7 @@ Global Symbols
 <P><STRONG><a name="[b1]"></a>__aeabi_fmul</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fmul.o(x$fpl$fmul))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;homing_cycle
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_cycle_reinitialize
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_trapezoid_for_block
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;max_allowable_speed
@@ -2530,6 +2527,9 @@ Global Symbols
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_dwell
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printFloat
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settings_store_global_setting
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_go_home
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[13b]"></a>_fmul</STRONG> (Thumb, 258 bytes, Stack size 16 bytes, fmul.o(x$fpl$fmul), UNUSED)
@@ -2589,13 +2589,13 @@ Global Symbols
 <P><STRONG><a name="[ef]"></a>__aeabi_fsub</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fsub))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fsub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;max_allowable_speed
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;max_allowable_speed
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;intersection_distance
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;estimate_acceleration_distance
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plan_buffer_line
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_dwell
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc_arc
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[141]"></a>_fsub</STRONG> (Thumb, 234 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fsub), UNUSED)
@@ -2688,8 +2688,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[f9]"></a>select_plane</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, gcode.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_init
+<BR><BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_init
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute_line
 </UL>
 
 <P><STRONG><a name="[fa]"></a>to_millimeters</STRONG> (Thumb, 48 bytes, Stack size 24 bytes, gcode.o(.text))
