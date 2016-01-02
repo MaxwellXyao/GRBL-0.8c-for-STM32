@@ -1,0 +1,47 @@
+*** Creating Trace Output File '.\output\temp.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\output\main.o"'
+### List of Objects: adding '".\output\stm32f10x_it.o"'
+### List of Objects: adding '".\output\stm32f10x_rcc.o"'
+### List of Objects: adding '".\output\stm32f10x_lib.o"'
+### List of Objects: adding '".\output\stm32f10x_nvic.o"'
+### List of Objects: adding '".\output\stm32f10x_usart.o"'
+### List of Objects: adding '".\output\cortexm3_macro.o"'
+### List of Objects: adding '".\output\stm32f10x_vector.o"'
+### List of Objects: adding '".\output\system.o"'
+### List of Objects: adding '".\output\delay.o"'
+### List of Objects: adding '".\output\hw_gpio.o"'
+### List of Objects: adding '".\output\hw_eeprom.o"'
+### List of Objects: adding '".\output\hw_tim.o"'
+### List of Objects: adding '".\output\hw_usart.o"'
+### List of Objects: adding '".\output\hw_exti.o"'
+### List of Objects: adding '".\output\stepper.o"'
+### List of Objects: adding '".\output\serial.o"'
+### List of Objects: adding '".\output\limits.o"'
+### List of Objects: adding '".\output\protocol.o"'
+### List of Objects: adding '".\output\spindle_control.o"'
+### List of Objects: adding '".\output\coolant_control.o"'
+### List of Objects: adding '".\output\nuts_bolts.o"'
+### List of Objects: adding '".\output\eeprom.o"'
+### List of Objects: adding '".\output\report.o"'
+### List of Objects: adding '".\output\print.o"'
+### List of Objects: adding '".\output\settings.o"'
+### List of Objects: adding '".\output\motion_control.o"'
+### List of Objects: adding '".\output\gcode.o"'
+### List of Objects: adding '".\output\planner.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\output\main.o" ".\output\stm32f10x_it.o" ".\output\stm32f10x_rcc.o" ".\output\stm32f10x_lib.o" ".\output\stm32f10x_nvic.o" ".\output\stm32f10x_usart.o" ".\output\cortexm3_macro.o" ".\output\stm32f10x_vector.o" ".\output\system.o" ".\output\delay.o" ".\output\hw_gpio.o" ".\output\hw_eeprom.o" ".\output\hw_tim.o" ".\output\hw_usart.o" ".\output\hw_exti.o" ".\output\stepper.o" ".\output\serial.o" ".\output\limits.o" ".\output\protocol.o" ".\output\spindle_control.o" ".\output\coolant_control.o" ".\output\nuts_bolts.o" ".\output\eeprom.o" ".\output\report.o" ".\output\print.o" ".\output\settings.o" ".\output\motion_control.o" ".\output\gcode.o" ".\output\planner.o" --strict --scatter ".\output\temp.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\list\temp.map" -o ".\output\temp.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\output\temp.axf'
+### ADS-LD Command File: '.\output\temp.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\output\temp.lnp', Handle=0x00000300
+### Writing '.lnp' file
+### ADS-LD Command file '.\output\temp.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

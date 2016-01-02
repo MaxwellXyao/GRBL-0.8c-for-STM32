@@ -1,0 +1,4 @@
+--cpu Cortex-M3 ".\output\main.o" ".\output\stm32f10x_it.o" ".\output\stm32f10x_rcc.o" ".\output\stm32f10x_lib.o" ".\output\stm32f10x_nvic.o" ".\output\stm32f10x_usart.o" ".\output\cortexm3_macro.o" ".\output\stm32f10x_vector.o" ".\output\system.o" ".\output\delay.o" ".\output\hw_gpio.o" ".\output\hw_eeprom.o" ".\output\hw_tim.o" ".\output\hw_usart.o" ".\output\hw_exti.o" ".\output\stepper.o" ".\output\serial.o" ".\output\limits.o" ".\output\protocol.o" ".\output\spindle_control.o" ".\output\coolant_control.o" ".\output\nuts_bolts.o" ".\output\eeprom.o" ".\output\report.o" ".\output\print.o" ".\output\settings.o" ".\output\motion_control.o" ".\output\gcode.o" ".\output\planner.o" --strict --scatter ".\output\temp.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\list\temp.map" -o ".\output\temp.axf"
