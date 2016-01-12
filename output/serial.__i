@@ -1,1 +1,0 @@
--c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\lib\inc -I.\user -I.\SYSTEM -I.\GRBL -I.\HARDWARE -I "F:\STM32\keil mdk\MDK\ARM\INC" -I "F:\STM32\keil mdk\MDK\ARM\INC\ST\STM32F10x" -o ".\output\serial.o" --omf_browse ".\output\serial.crf" --depend ".\output\serial.d" "GRBL\serial.c"

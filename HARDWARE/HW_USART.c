@@ -18,7 +18,7 @@ void HW_USART_Init(u32 bound)
 	USART_InitStructure.USART_Mode = USART_Mode_Rx |USART_Mode_Tx;//收发模式
 	USART_Init(USART1, &USART_InitStructure); //初始化串口
 	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);//开启接收中断
-	MY_NVIC_Init(0,0,USART1_IRQChannel,2);//组2，最低优先级			//注意调优先级！！！！！！！！！！！ 
+	MY_NVIC_Init(3,3,USART1_IRQChannel,2);//最低优先级		
 
 	USART_Cmd(USART1, ENABLE); //使能串口
 }
