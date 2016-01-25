@@ -102,7 +102,7 @@ SPI2:		GPIOB 12-15
 #define STM32_FLASH_SIZE 	64 	 			//所选STM32的FLASH容量大小(单位为K)
 
 #define STM32_EEPROM_ADDR_START	0x0800FC00	//作为EEPROM的起始地址（地址必须是偶数）
-#define STM32_EEPROM_ADDR_MAX	400			//EEPROM容量(单位B)
+#define STM32_EEPROM_ADDR_MAX	0x400			//EEPROM容量(单位B)
 
 
 //###############################【头文件】##############################
