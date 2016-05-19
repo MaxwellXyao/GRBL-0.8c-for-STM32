@@ -41,4 +41,4 @@ SPI2:		GPIOB 12-15		¿É¼ÓSD¿¨
 2015-12-31
 SOL.lab
 MaxwellXyao
-email:917286114@qq.com
+email:MaxwellXyao@foxmail.com
